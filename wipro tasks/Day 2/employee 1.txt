@@ -1,0 +1,61 @@
+using System;
+
+namespace EmployeeDetails
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter employee ID: ");
+            int employeeID = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter employee name: ");
+            string employeeName = Console.ReadLine();
+
+            Console.Write("Enter basic salary: ");
+            double basicSalary = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Is contract employee (yes/no): ");
+            bool isContractEmployee = Console.ReadLine().ToLower() == "yes";
+
+            Console.Write("Enter department number: ");
+            int departmentNumber = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter email ID: ");
+            string emailID = Console.ReadLine();
+
+            double HRA = CalculateHRA(basicSalary);
+            double MA = CalculateMA(basicSalary);
+            double TA = CalculateTA(basicSalary);
+
+            double netSalary = basicSalary + HRA + MA + TA;
+
+            Console.WriteLine("Employee Details:");
+            Console.WriteLine($"ID: {employeeID}");
+            Console.WriteLine($"Name: {employeeName}");
+            Console.WriteLine($"Basic Salary: {basicSalary}");
+            Console.WriteLine($"Is Contract Employee: {isContractEmployee}");
+            Console.WriteLine($"Department Number: {departmentNumber}");
+            Console.WriteLine($"Email ID: {emailID}");
+            Console.WriteLine($"HRA: {HRA}");
+            Console.WriteLine($"MA: {MA}");
+            Console.WriteLine($"TA: {TA}");
+            Console.WriteLine($"Net Salary: {netSalary}");
+        }
+
+        static double CalculateHRA(double basicSalary)
+        {
+            return basicSalary * 0.15;
+        }
+
+        static double CalculateMA(double basicSalary)
+        {
+            return basicSalary * 0.10;
+        }
+
+        static double CalculateTA(double basicSalary)
+        {
+            return basicSalary * 0.15;
+        }
+    }
+}

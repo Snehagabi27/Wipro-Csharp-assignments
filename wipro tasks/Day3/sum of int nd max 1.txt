@@ -1,0 +1,50 @@
+1.using System;
+
+namespace SumOfIntegers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Prompt the user to enter two integers
+            Console.WriteLine("Enter the first integer:");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the second integer:");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            // Calculate the sum of the two integers
+            int sum = num1 + num2;
+
+            // Display the result
+            Console.WriteLine("The sum of " + num1 + " and " + num2 + " is " + sum);
+
+            Console.ReadLine();
+        }
+    }
+}
+-------------------------------------------------------------
+
+1.b.using System;
+
+namespace MaxIntegerValue
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Find the maximum value for integers
+            int maxIntValue = int.MaxValue;
+
+            // Assign the maximum value to two integer variables
+            int num1 = maxIntValue;
+            int num2 = maxIntValue;
+
+            // Display the values of num1 and num2
+            Console.WriteLine("num1: " + num1);
+            Console.WriteLine("num2: " + num2);
+
+            Console.ReadLine();
+        }
+    }
+}

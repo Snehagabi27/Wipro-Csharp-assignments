@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int patientId = 1;
+        string patientName = "Raghu";
+        int age = 45;
+        string address = "Hyderabd, KPHB street 5";
+        bool hasInsurance = true;
+        double weightKg = 70.5;
+        DateTime lastVisitDate = DateTime.Now.AddDays(-30);
+        string diagnosis = "Hypertension";
+
+        Console.WriteLine("Patient Details:");
+        Console.WriteLine($"Patient ID: {patientId}");
+        Console.WriteLine($"Patient Name: {patientName}");
+        Console.WriteLine($"Age: {age}");
+        Console.WriteLine($"Address: {address}");
+        Console.WriteLine($"Has Insurance: {(hasInsurance ? "Yes" : "No")}");
+        Console.WriteLine($"Weight: {weightKg} kg");
+        Console.WriteLine($"Last Visit Date: {lastVisitDate.ToShortDateString()}");
+        Console.WriteLine($"Diagnosis: {diagnosis}");
+    }
+}
