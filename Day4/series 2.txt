@@ -1,0 +1,56 @@
+A.using System;
+
+class Series1
+{
+    static void Main()
+    {
+        for (int i = 1; i<=10; i++)
+        {
+            Console.WriteLine(i * i + "");
+        }
+        Console.ReadLine();
+    }
+}
+-----------------------------------------------------
+
+﻿B.using System;
+
+
+class FibonacciSerise
+{
+    static void Main()
+    {
+        
+        int n1 = 0, n2 = 1,n3,count = 14;
+        Console.Write("fibonacci series:"+count+"terms:");
+        for (int i = 0; i <= count; i++)
+        {
+            Console.Write(n1 + " ");
+            n3 = n1 + n2;
+            n1 = n2;
+            n2 = n3;
+        }
+    }
+}
+----------------------------------------------------
+
+C.using System;
+
+class Series3
+{
+    static void Main()
+    {
+        Console.WriteLine("Series");
+
+        int[] series = { 3, 5, 6, 7, 10, 12, 15, 18, 20, 21, 24, 25, 27, 30 };
+
+        for (int i = 0; i < series.Length; i++)
+        {
+            Console.WriteLine(series[i] + "");
+
+        }
+        Console.WriteLine();
+    }
+}
+
+
