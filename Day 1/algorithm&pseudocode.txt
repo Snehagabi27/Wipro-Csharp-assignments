@@ -1,0 +1,119 @@
+FUNCTION sumOfDigits(456)
+    sum = 0
+
+    WHILE number > 0 DO
+        digit = number MOD 10
+        sum = sum + digit
+        number = number DIV 10
+    END WHILE
+
+    RETURN sum
+END FUNCTION
+
+
+number = INPUT("Enter a number: ")
+result = sumOfDigits(number)
+PRINT "The sum of the digits is:", result
+
+
+
+1. ALGORITHAM:
+
+1. Start
+2. Input a number from the user
+3. Initialise sum = 0
+4. while number is greater than 0
+5. Extract the last digit of the number using number % 10
+6. Add the extracted digit to sum
+7. Remove the last digit from the number using number = number / 10
+8. Display sum
+9. End
+
+PSEUDOCODE:
+
+Start
+Input: num (the number given by the user)
+ sum = 0
+ While num > 0 do
+  digit = num mod 10
+  sum = sum + digit
+  num = num div 10
+ Print: sum
+End 
+
+2. Algoritham: 
+
+ 1. Start
+ 2. Get the shape type (rectangle, square, circle) from the user
+ 3. If shape is rectangle:
+    - Get length and width
+    - Calculate the area as length × width
+    - Print the area
+ 4. If shape is square:
+    - Get side length
+    - Calculate the area as side × side
+    - Print the area
+ 5. If shape is circle:
+    - Get radius
+    - Calculate the area as π × radius × radius
+    - Print the area
+ 6. End
+ 
+
+Pseudocode:
+ 
+Start
+Rectangle:
+ int length (l), width (w)
+ int area = l * w
+ Print area
+
+Square:
+ int side (s)
+ int area = s * s
+ Print area
+
+Circle:
+ int radius (r)
+ int area = π * r * r
+ Print area
+End
+
+
+3. ALGORITHAM:
+
+
+ 1. Input: 5 marks (m1, m2, m3, m4, m5)
+ 2. Calculate: sum = m1 + m2 + m3 + m4 + m5
+ 3. Calculate: average = sum / 5
+ 4. If average >= 75 and average <= 90:
+    - Print "Excellent"
+ 5. Else If average >= 60 and average < 75:
+    - Print "Good"
+ 6. Else If average >= 45 and average < 60:
+    - Print "Pass"
+ 7. Else:
+    - Print "Fail"
+
+ Pseudocode:
+
+ 1.Start
+   int mark1, mark2, mark3, mark4, mark5
+   Average = (mark1 + mark2 + mark3 + mark4 + mark5)/5
+   If average > 75 and average < 90 
+            print: "Good"
+  Else If average > 60 and average < 75
+            print "Pass"
+  Else If average > 45 and average < 60
+            print "Fail"
+   End
+  
+
+
+
+
+
+
+
+
+   
