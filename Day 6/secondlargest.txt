@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] arr = {12, 23, 34, 45, 56, 67, 78, 89, 90};
+        int max = int.MinValue;
+        int secondMax = int.MinValue;
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] > max)
+            {
+                secondMax = max;
+                max = arr[i];
+            }
+            else if (arr[i] > secondMax && arr[i] != max)
+            {
+                secondMax = arr[i];
+            }
+        }
+
+        Console.WriteLine("Second largest element is: " + secondMax);
+    }
+}
+
