@@ -1,0 +1,32 @@
+public class Product{
+    private  int _productId;
+    private string _productName { get; set; }
+    private int _unitPrice { get; set; }
+    private int _quantity {  get; set; }
+
+    public Product(int productId,string  productName,int unitPrice,int quantity) {
+        _productId = productId;
+        _productName = productName;
+        _unitPrice = unitPrice;
+        _quantity = quantity;
+    }
+
+
+    public void Display() {
+        Console.WriteLine("ProductID : {0} , Product Name : {1} , Product Price : {2} , Quantity : {3} ,",_productId,_productName,_unitPrice,_quantity);
+        Console.WriteLine("Total Amount = {0}", _unitPrice*_quantity);
+        Console.WriteLine();
+    }
+
+}
+
+public class ProductDetails {
+    public static void Main(string[] args) {
+        Product product1 = new Product(10982,"Colgate Toothpaste",70,2);
+        product1.Display();
+        Product product2 = new Product(10342, "Hamam Soap", 45, 4);
+        product2.Display();
+        Product product3 = new Product(10982, "Shampoo", 140, 3);
+        product3.Display();
+    }
+}

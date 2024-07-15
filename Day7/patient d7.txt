@@ -1,0 +1,67 @@
+using System;
+
+namespace MedicalClinicApp
+{
+    class PatientDetails
+    {
+     
+        public int PatientId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public bool IsInsured { get; set; }
+        public double Weight { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string BloodType { get; set; }
+        public string Address { get; set; }
+
+
+        public void ShowDetails()
+        {
+            Console.WriteLine("Patient Details:");
+            Console.WriteLine($"PatientId   : {PatientId}");
+            Console.WriteLine($"First Name  : {FirstName}");
+            Console.WriteLine($"Last Name   : {LastName}");
+            Console.WriteLine($"Is Insured  : {IsInsured}");
+            Console.WriteLine($"Weight      : {Weight} kg");
+            Console.WriteLine($"Date of Birth : {DateOfBirth.ToShortDateString()}");
+            Console.WriteLine($"Blood Type  : {BloodType}");
+            Console.WriteLine($"Address     : {Address}");
+            Console.WriteLine();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        
+            PatientDetails patient1 = new PatientDetails
+            {
+                PatientId = 1001,
+                FirstName = "Karthik",
+                LastName = "Raja",
+                IsInsured = true,
+                Weight = 60.5,
+                DateOfBirth = new DateTime(1997, 5, 7),
+                BloodType = "A+",
+                Address = "RailwayStation, Hosur"
+            };
+
+            PatientDetails patient2 = new PatientDetails
+            {
+                PatientId = 1002,
+                FirstName = "Sai",
+                LastName = "Sne",
+                IsInsured = false,
+                Weight = 45.4,
+                DateOfBirth = new DateTime(2001, 7, 27),
+                BloodType = "O+",
+                Address = "Dharmapuri"
+            };
+
+           
+            patient1.ShowDetails();
+            patient2.ShowDetails();
+        }
+    }
+}
