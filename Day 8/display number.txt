@@ -1,0 +1,33 @@
+using System;
+
+
+namespace DisplayNumber
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter a sentence:");
+            string input = Console.ReadLine();
+
+            string[] words = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            int count = 0;
+
+            foreach (string word in words)
+            {
+                int length = word.Length;
+                if (words.Count(w => w.Length == length) > 1)
+                {
+                    count++;
+                }
+            }
+
+            // Hi  How are you 
+            // You are best thing 
+            //Practice makes man perfect 
+            Console.WriteLine($"Number of words with equal character count: {count}");
+        }
+
+    }
+}

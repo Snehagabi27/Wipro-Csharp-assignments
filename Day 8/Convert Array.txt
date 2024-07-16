@@ -1,0 +1,27 @@
+using System;
+
+
+namespace ConvertArrayS
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] ar = { "Books", "Pens", "Charts" };
+
+            string result = "";
+
+            for (int i = 0; i < ar.Length; i++)
+            {
+                result += ar[i];
+
+                if (i < ar.Length - 1)
+                {
+                    result += ", ";
+                }
+            }
+
+            Console.WriteLine(result);
+        }
+    }
+}
