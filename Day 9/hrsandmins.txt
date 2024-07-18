@@ -1,0 +1,48 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter hours: ");
+        int hours = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter minutes: ");
+        int minutes = Convert.ToInt32(Console.ReadLine());
+
+        string timeInWords = GetTimeInWords(hours, minutes);
+
+        Console.WriteLine(timeInWords);
+    }
+
+    static string GetTimeInWords(int hours, int minutes)
+    {
+        string[] hourWords = { "twelve", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven" };
+        string[] minuteWords = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty one", "twenty two", "twenty three", "twenty four", "twenty five", "twenty six", "twenty seven", "twenty eight", "twenty nine" };
+
+        if (minutes == 0)
+        {
+            return hourWords[hours] + " o' clock";
+        }
+        else if (minutes == 15)
+        {
+            return "quarter past " + hourWords[hours];
+        }
+        else if (minutes == 30)
+        {
+            return "half past " + hourWords[hours];
+        }
+        else if (minutes == 45)
+        {
+            return "quarter to " + hourWords[(hours + 1) % 12];
+        }
+        else if (minutes < 30)
+        {
+            return minuteWords[minutes] + " minutes past " + hourWords[hours];
+        }
+        else
+        {
+            return minuteWords[60 - minutes] + " minutes to " + hourWords[(hours + 1) % 12];
+        }
+    }
+}

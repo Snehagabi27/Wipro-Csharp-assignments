@@ -1,0 +1,98 @@
+using System;
+
+public class Node
+{
+    public int Data;
+    public Node Next;
+
+    public Node(int data)
+    {
+        Data = data;
+        Next = null;
+    }
+}
+
+public class LinkedList
+{
+    private Node head;
+
+    public LinkedList()
+    {
+        head = null;
+    }
+
+    public void Append(int data)
+    {
+        Node newNode = new Node(data);
+        if (head == null)
+        {
+            head = newNode;
+            return;
+        }
+
+        Node lastNode = head;
+        while (lastNode.Next != null)
+        {
+            lastNode = lastNode.Next;
+        }
+        lastNode.Next = newNode;
+    }
+
+    public void PrintList()
+    {
+        Node currentNode = head;
+        while (currentNode != null)
+        {
+            Console.Write(currentNode.Data + " -> ");
+            currentNode = currentNode.Next;
+        }
+        Console.WriteLine("null");
+    }
+
+    public void RemoveNode(int key)
+    {
+        Node currentNode = head;
+        Node previousNode = null;
+
+        // Case when the node to be removed is the head
+        if (currentNode != null && currentNode.Data == key)
+        {
+            head = currentNode.Next;
+            return;
+        }
+
+        // Search for the node to be removed, keeping track of the previous node
+        while (currentNode != null && currentNode.Data != key)
+        {
+            previousNode = currentNode;
+            currentNode = currentNode.Next;
+        }
+
+        // If the key was not present in the linked list
+        if (currentNode == null)
+        {
+            Console.WriteLine("The value was not found in the list.");
+            return;
+        }
+
+        // Remove the node
+        previousNode.Next = currentNode.Next;
+    }
+
+    public static void Main(string[] args)
+    {
+        LinkedList llist = new LinkedList();
+        llist.Append(1);
+        llist.Append(2);
+        llist.Append(3);
+        llist.Append(4);
+
+        Console.WriteLine("Original list:");
+        llist.PrintList();
+
+        llist.RemoveNode(3);
+
+        Console.WriteLine("List after removing node with value 3:");
+        llist.PrintList();
+    }
+}
